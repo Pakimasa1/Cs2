@@ -61,10 +61,10 @@ export function GlobalChat({ initialMessages, user, username }: GlobalChatProps)
 
   // Auto-scroll to bottom
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  }, [messages]);
+  if (scrollRef.current) {
+    scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }
+}, [messages]);
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
